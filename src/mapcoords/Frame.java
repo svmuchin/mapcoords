@@ -1,5 +1,8 @@
 package mapcoords;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Frame extends javax.swing.JFrame {
 
     public Frame() {
@@ -44,7 +47,12 @@ public class Frame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DowlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DowlActionPerformed
-       
+
+            try {
+                new WriteToFile().writeInFile();
+            } catch (Exception ex) {
+                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+            }    
     }//GEN-LAST:event_DowlActionPerformed
 
     static void main(String args[]) {
